@@ -1,171 +1,205 @@
+<?php
+// Car details
+$carName = "NISSAN GT-R";
+$carTagline = "Drive the Future";
+$carDescription = "The Nissan GTR delivers thrilling speed, sharp precision, and bold design — a true icon built for those who demand performance.";
+$ctaText = "Book a Test Drive";
+
+$topspeed = "315 km/h";
+$torque = "467 lb-ft";
+$power = "565 HP";
+$engine = "3.8L V6 Twin-Turbo";
+
+$features = [
+    "Twin-turbocharged 3.8L V6 engine",
+    "565 horsepower with lightning-fast acceleration",
+    "Advanced all-wheel-drive system",
+    "Premium interior with carbon fiber trim",
+    "State-of-the-art infotainment system"
+];
+
+$carImages = [
+    "GTR1.jpg",
+    "GTR2.jpg",
+    "GTR3.jpg"
+];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NISSAN GT-R - Landing Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 5px 0;
-            font-size: 1.2em;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
-            gap: 40px;
-        }
-        .description {
-            max-width: 500px;
-        }
-        .description p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-        .features {
-            margin-top: 20px;
-        }
-        .features h3 {
-            margin-bottom: 10px;
-            font-size: 1.3em;
-            border-bottom: 2px solid #000;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .features ul {
-            list-style: none;
-            padding: 0;
-        }
-        .features ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid #ccc;
-        }
-        .specs {
-            margin-top: 20px;
-        }
-        .specs table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .specs th, .specs td {
-            padding: 8px;
-            border-bottom: 1px solid #ccc;
-            text-align: left;
-        }
-        .gallery {
-            background-color: #f9f9f9;
-            padding: 30px 20px;
-            text-align: center;
-        }
-        .gallery img {
-            width: 250px;
-            height: auto;
-            margin: 10px;
-            border: 3px solid #000;
-        }
-        .contact {
-            padding: 30px 20px;
-            background-color: #eee;
-            text-align: center;
-        }
-        .contact input, .contact textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            background-color: #000;
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #444;
-        }
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?php echo $carName; ?> - Landing Page</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #1b1f2a;
+        color: white;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    header .logo {
+        font-weight: bold;
+        font-size: 3.2rem;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 0.9rem;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+        flex-wrap: wrap;
+    }
+    .hero-text {
+        max-width: 550px;
+    }
+    .hero-text h1 {
+        font-size: 2.8rem;
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        opacity: 0.85;
+    }
+    .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border: 1px solid white;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: white;
+        color: black;
+    }
+    .hero img {
+        max-width: 700px;
+        width: 100%;
+    }
+    .specs {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        gap: 50px;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .specs div h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .features {
+        padding: 30px 50px;
+        background: #131722;
+    }
+    .features h2 {
+        margin-bottom: 15px;
+    }
+    .features ul {
+        list-style: none;
+        padding: 0;
+    }
+    .features ul li {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .gallery {
+        background: #0f121a;
+        padding: 30px 50px;
+        text-align: center;
+    }
+    .gallery h2 {
+        margin-bottom: 20px;
+    }
+    .gallery img {
+        width: 300px;
+        height: auto;
+        margin: 10px;
+        border-radius: 8px;
+        border: 2px solid rgba(255,255,255,0.3);
+        transition: 0.3s;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+        border-color: white;
+    }
+</style>
 </head>
 <body>
 
+    
+
 <header>
-    <h1>NISSAN GT-R</h1>
-    <p>Drive the Future</p>
+    <div class="logo"><?php echo $carName; ?></div>
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">HISTORY</a>
+        <a href="#">CONTACT</a>
+    </nav>
 </header>
 
 <section class="hero">
-    <img src="GTR.jpg" alt="NISSAN GT-R">
-    <div class="description">
-        <p>The Nissan GTR delivers thrilling speed, sharp precision, and bold design — a true icon built for those who demand performance.</p>
+    <div class="hero-text">
+        <h1>LUXURY PERFORMANCE CARS AT YOUR DESTINATION</h1>
+        <p><?php echo $carDescription; ?></p>
+        <a href="#features" class="btn">LEARN MORE</a>
+    </div>
+    <img src="GTR.png" alt="<?php echo $carName; ?>">
+</section>
 
-        <div class="features">
-            <h3>Key Features</h3>
-            <ul>
-                <li>Twin-turbocharged 3.8L V6 engine</li>
-                <li>565 horsepower with lightning-fast acceleration</li>
-                <li>Advanced all-wheel-drive system</li>
-                <li>Premium interior with carbon fiber trim</li>
-                <li>State-of-the-art infotainment system</li>
-            </ul>
-        </div>
-
-        <div class="specs">
-            <h3>Performance Specs</h3>
-            <table>
-                <tr><th>Horsepower</th><td>565 HP</td></tr>
-                <tr><th>Torque</th><td>467 lb-ft</td></tr>
-                <tr><th>Top Speed</th><td>315 km/h</td></tr>
-                <tr><th>0-100 km/h</th><td>2.9 seconds</td></tr>
-                <tr><th>Drivetrain</th><td>All-Wheel Drive</td></tr>
-            </table>
-        </div>
-
-        <a href="#contact" class="btn">Book a Test Drive</a>
+<section class="specs">
+    <div>
+        <h3>Top speed</h3>
+        <p><?php echo $topspeed; ?></p>
+    </div>
+    <div>
+        <h3>Torque</h3>
+        <p><?php echo $torque; ?></p>
+    </div>
+    <div>
+        <h3>Power</h3>
+        <p><?php echo $power; ?></p>
+    </div>
+    <div>
+        <h3>Engine</h3>
+        <p><?php echo $engine; ?></p>
     </div>
 </section>
 
-<section class="gallery">
-    <h3>Image Gallery</h3>
-    <img src="GTR1.jpg" alt="Nissan GTR Front View">
-    <img src="GTR2.jpg" alt="Nissan GTR Side View">
-    <img src="GTR3.jpg" alt="Nissan GTR Rear View">
+<section id="features" class="features">
+    <h2>Key Features</h2>
+    <ul>
+        <?php foreach ($features as $feature): ?>
+            <li><?php echo $feature; ?></li>
+        <?php endforeach; ?>
+    </ul>
 </section>
 
-<footer>
-    &copy; 2025 NISSAN GT-R. All Rights Reserved.
-</footer>
+<section class="gallery">
+    <h2>Car Gallery</h2>
+    <?php foreach ($carImages as $img): ?>
+        <img src="<?php echo $img; ?>" alt="Car Image">
+    <?php endforeach; ?>
+</section>
 
 </body>
 </html>
